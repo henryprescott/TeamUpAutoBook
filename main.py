@@ -14,6 +14,11 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
+original_stdout = sys.stdout # Save a reference to the original standard output
+
+with open('TeamUpAutoBook.log', 'w') as f:
+    sys.stdout = f
+
 load_dotenv()
 
 MY_ENV_VAR = os.getenv('MY_ENV_VAR')
